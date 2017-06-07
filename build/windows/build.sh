@@ -2,7 +2,7 @@
 
 set -xue
 
-cd
+cd $TRAVIS_BUILD_DIR
 cd libelectronpass
 
 MXE_DIR=/usr/lib/mxe
