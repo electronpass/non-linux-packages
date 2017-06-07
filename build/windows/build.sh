@@ -3,6 +3,7 @@
 set -xue
 
 cd $TRAVIS_BUILD_DIR
+cp CMakeLists-win-libelectronpass.txt libelectronpass/CMakeLists.txt # apply patch
 cd libelectronpass
 
 MXE_DIR=/usr/lib/mxe
