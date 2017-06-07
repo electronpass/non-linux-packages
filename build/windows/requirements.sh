@@ -24,7 +24,7 @@ fi
 MXE2_TARGET=$(echo "$MXE_TARGET" | sed 's/_/-/g')
 sudo apt-get --yes install \
     mxe-${MXE2_TARGET}-qt \
-    libsodium
+    mxe-${MXE2_TARGET}-libsodium
 
 # MXE doesn't have 64bit NSIS
 sudo apt-get --yes install \
