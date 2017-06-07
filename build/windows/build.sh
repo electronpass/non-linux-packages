@@ -4,6 +4,7 @@ set -xue
 
 cd $TRAVIS_BUILD_DIR
 cp CMakeLists-win-libelectronpass.txt libelectronpass/CMakeLists.txt # apply patch
+mkdir libelectronpassinstall
 cd libelectronpass
 
 MXE_DIR=/usr/lib/mxe
@@ -16,7 +17,8 @@ if [ "$BATTLESHIP_PLATFORM" = "windows64" ]; then
     MXE_TARGET=x86_64-w64-mingw32.static
 fi
 
-${MXE_DIR}/usr/bin/${MXE_TARGET}-cmake .
-cmake --build
+${MXE_DIR}/usr/bin/${MXE_TARGET}-cmake -DCMAKE_INSTALL_PREFIX=${TRAVIS_BUILD_DIR}/libelectronpassinstall .
+make -j2
+make install
 
 set +xue
