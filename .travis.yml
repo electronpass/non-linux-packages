@@ -1,0 +1,35 @@
+language: cpp
+
+matrix:
+
+  include:
+    - env: BATTLESHIP_PLATFORM='windows32'
+      os: linux
+      dist: trusty
+      sudo: required
+      compiler: gcc
+
+    - env: BATTLESHIP_PLATFORM='windows64'
+      os: linux
+      dist: trusty
+      sudo: required
+      compiler: gcc
+
+    - env: BATTLESHIP_PLATFORM='macXX'
+      os: osx
+      osx_image: xcode7.2
+      compiler: clang
+
+before_install:
+  - BATTLESHIP_TARGET="${BATTLESHIP_PLATFORM::${#BATTLESHIP_PLATFORM}-2}"
+  - ./build/${BATTLESHIP_TARGET}/requirements.sh
+  - git clone https://github.com/electronpass/libelectronpass.git
+
+install:
+  - source ./build/${BATTLESHIP_TARGET}/build.sh
+
+script:
+  - echo "Nothing."
+
+before_deploy:
+  - source build-dir/package.sh
