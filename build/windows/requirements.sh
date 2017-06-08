@@ -29,7 +29,8 @@ sudo apt-get --yes install \
     mxe-${MXE2_TARGET}-qtdeclarative \
     mxe-${MXE2_TARGET}-qtquickcontrols \
     mxe-${MXE2_TARGET}-qtquickcontrols2 \
-    mxe-${MXE2_TARGET}-qttools
+    mxe-${MXE2_TARGET}-qttools \
+    mxe-${MXE2_TARGET}-zlib
 
 # MXE doesn't have 64bit NSIS
 sudo apt-get --yes install \
