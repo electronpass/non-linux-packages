@@ -19,7 +19,7 @@ cp CMakeLists-win-libelectronpass.txt libelectronpass/CMakeLists.txt # apply pat
 cd libelectronpass
 ${MXE_DIR}/usr/bin/${MXE_TARGET}-cmake .
 make -j2
-make install
+sudo make install
 
 
 # install extra-cmake-modules
@@ -28,7 +28,7 @@ git clone https://github.com/KDE/extra-cmake-modules.git
 cd extra-cmake-modules
 ${MXE_DIR}/usr/bin/${MXE_TARGET}-cmake .
 make -j2
-make install
+sudo make install
 
 # build electronpass-desktop
 cd $TRAVIS_BUILD_DIR
@@ -37,6 +37,5 @@ cd electronpass-desktop
 cp app/sync/keys.default.txt app/sync/keys.txt  # copy default keys for now
 ${MXE_DIR}/usr/bin/${MXE_TARGET}-cmake .
 make -j2
-make install
 
 set +xue

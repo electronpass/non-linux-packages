@@ -25,7 +25,7 @@ before_install:
   - ./build/${ELECTRONPASS_TARGET}/requirements.sh
 
 install:
-  - sudo source ./build/${ELECTRONPASS_TARGET}/build.sh
+  - source ./build/${ELECTRONPASS_TARGET}/build.sh
 
 script:
   - echo "Nothing."
