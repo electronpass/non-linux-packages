@@ -32,4 +32,4 @@ script:
   - echo "Nothing."
 
 before_deploy:
-  - source build-dir/package.sh
+  - # source build-dir/package.sh
