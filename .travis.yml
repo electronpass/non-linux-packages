@@ -23,7 +23,6 @@ matrix:
 before_install:
   - ELECTRONPASS_TARGET="${ELECTRONPASS_PLATFORM::${#ELECTRONPASS_PLATFORM}-2}"
   - ./build/${ELECTRONPASS_TARGET}/requirements.sh
-  - git clone https://github.com/electronpass/libelectronpass.git
 
 install:
   - source ./build/${ELECTRONPASS_TARGET}/build.sh
