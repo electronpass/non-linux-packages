@@ -1,7 +1,7 @@
 language: cpp
+sudo: enabled
 
 matrix:
-
   include:
     - env: ELECTRONPASS_PLATFORM='windows32'
       os: linux
@@ -25,7 +25,7 @@ before_install:
   - ./build/${ELECTRONPASS_TARGET}/requirements.sh
 
 install:
-  - source ./build/${ELECTRONPASS_TARGET}/build.sh
+  - sudo source ./build/${ELECTRONPASS_TARGET}/build.sh
 
 script:
   - echo "Nothing."

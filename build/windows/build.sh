@@ -34,6 +34,7 @@ make install
 cd $TRAVIS_BUILD_DIR
 git clone https://github.com/electronpass/electronpass-desktop.git
 cd electronpass-desktop
+cp app/sync/keys.default.txt app/sync/keys.txt  # copy default keys for now
 ${MXE_DIR}/usr/bin/${MXE_TARGET}-cmake .
 make -j2
 make install
